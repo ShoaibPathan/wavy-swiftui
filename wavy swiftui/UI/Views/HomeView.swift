@@ -21,12 +21,15 @@ struct HomeView: View {
     @Environment(\.container) private var container
     var body: some View {
         VStack {
-            switch image {
-            case .notRequested: EmptyView()
-            case .loading(_, _): ProgressView().progressViewStyle(CircularProgressViewStyle())
-            case let .loaded(networkImage): networkImage.resizable().frame(maxWidth: 200, maxHeight: 200)
-            case let .failed(error): Text("Failed to load image: \(error.localizedDescription)").foregroundColor(.red)
+            Group {
+                switch image {
+                case .notRequested: EmptyView()
+                case .loading(_, _): ProgressView().progressViewStyle(CircularProgressViewStyle())
+                case let .loaded(networkImage): networkImage.resizable().frame(maxWidth: 200, maxHeight: 200)
+                case let .failed(error): Text("Failed to load image: \(error.localizedDescription)").foregroundColor(.red)
+                }
             }
+            .padding(.top)
             Spacer()
 
             switch quote {

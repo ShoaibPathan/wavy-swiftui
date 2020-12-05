@@ -9,7 +9,6 @@ import Combine
 import SwiftUI
 
 typealias LoadableSubject<T> = Binding<Loadable<T>>
-//typealias CancelBag = Set<AnyCancellable>
 
 enum Loadable<T> {
     case notRequested
