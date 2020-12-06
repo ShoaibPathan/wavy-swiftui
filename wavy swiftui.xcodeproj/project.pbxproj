@@ -20,11 +20,13 @@
 		E20A3DF92577914D00D6257F /* DIContainer.swift in Sources */ = {isa = PBXBuildFile; fileRef = E20A3DF82577914D00D6257F /* DIContainer.swift */; };
 		E20A3E012577936A00D6257F /* AppEnvironment.swift in Sources */ = {isa = PBXBuildFile; fileRef = E20A3E002577936A00D6257F /* AppEnvironment.swift */; };
 		E2732FF6257A468E0006C2CC /* Subjects.swift in Sources */ = {isa = PBXBuildFile; fileRef = E2732FF5257A468E0006C2CC /* Subjects.swift */; };
+		E2A61878257D1D840004D6BD /* APIError.swift in Sources */ = {isa = PBXBuildFile; fileRef = E2A61877257D1D840004D6BD /* APIError.swift */; };
+		E2A61882257D29A90004D6BD /* HTTP.swift in Sources */ = {isa = PBXBuildFile; fileRef = E2A61881257D29A90004D6BD /* HTTP.swift */; };
+		E2A6188D257D29E60004D6BD /* Endpoint.swift in Sources */ = {isa = PBXBuildFile; fileRef = E2A6188C257D29E60004D6BD /* Endpoint.swift */; };
 		E2F0569E25779A0B00B019AB /* HomeView.swift in Sources */ = {isa = PBXBuildFile; fileRef = E2F0569D25779A0B00B019AB /* HomeView.swift */; };
 		E2F056A32577A9E000B019AB /* NetworkAgent.swift in Sources */ = {isa = PBXBuildFile; fileRef = E2F056A22577A9E000B019AB /* NetworkAgent.swift */; };
 		E2F056E32577D48400B019AB /* QuotesAgent.swift in Sources */ = {isa = PBXBuildFile; fileRef = E2F056E22577D48400B019AB /* QuotesAgent.swift */; };
 		E2F05731257818D200B019AB /* APICall.swift in Sources */ = {isa = PBXBuildFile; fileRef = E2F05730257818D200B019AB /* APICall.swift */; };
-		E2F057362578F2A500B019AB /* AppHeaders.swift in Sources */ = {isa = PBXBuildFile; fileRef = E2F057352578F2A500B019AB /* AppHeaders.swift */; };
 		E2F0573B2578F45B00B019AB /* Quote.swift in Sources */ = {isa = PBXBuildFile; fileRef = E2F0573A2578F45B00B019AB /* Quote.swift */; };
 		E2F057412578F8B900B019AB /* Loadable.swift in Sources */ = {isa = PBXBuildFile; fileRef = E2F057402578F8B900B019AB /* Loadable.swift */; };
 		E2F0574625794ABE00B019AB /* QuotesRepository.swift in Sources */ = {isa = PBXBuildFile; fileRef = E2F0574525794ABE00B019AB /* QuotesRepository.swift */; };
@@ -67,11 +69,13 @@
 		E20A3DF82577914D00D6257F /* DIContainer.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DIContainer.swift; sourceTree = "<group>"; };
 		E20A3E002577936A00D6257F /* AppEnvironment.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppEnvironment.swift; sourceTree = "<group>"; };
 		E2732FF5257A468E0006C2CC /* Subjects.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Subjects.swift; sourceTree = "<group>"; };
+		E2A61877257D1D840004D6BD /* APIError.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = APIError.swift; sourceTree = "<group>"; };
+		E2A61881257D29A90004D6BD /* HTTP.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HTTP.swift; sourceTree = "<group>"; };
+		E2A6188C257D29E60004D6BD /* Endpoint.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Endpoint.swift; sourceTree = "<group>"; };
 		E2F0569D25779A0B00B019AB /* HomeView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeView.swift; sourceTree = "<group>"; };
 		E2F056A22577A9E000B019AB /* NetworkAgent.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NetworkAgent.swift; sourceTree = "<group>"; };
 		E2F056E22577D48400B019AB /* QuotesAgent.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = QuotesAgent.swift; sourceTree = "<group>"; };
 		E2F05730257818D200B019AB /* APICall.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = APICall.swift; sourceTree = "<group>"; };
-		E2F057352578F2A500B019AB /* AppHeaders.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppHeaders.swift; sourceTree = "<group>"; };
 		E2F0573A2578F45B00B019AB /* Quote.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Quote.swift; sourceTree = "<group>"; };
 		E2F057402578F8B900B019AB /* Loadable.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Loadable.swift; sourceTree = "<group>"; };
 		E2F0574525794ABE00B019AB /* QuotesRepository.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = QuotesRepository.swift; sourceTree = "<group>"; };
@@ -231,10 +235,12 @@
 		E20A3DE725778A5400D6257F /* Network */ = {
 			isa = PBXGroup;
 			children = (
+				E2A61876257D1D750004D6BD /* Errors */,
 				E2F056E12577D47400B019AB /* Agents */,
 				E2F056A22577A9E000B019AB /* NetworkAgent.swift */,
 				E2F05730257818D200B019AB /* APICall.swift */,
-				E2F057352578F2A500B019AB /* AppHeaders.swift */,
+				E2A61881257D29A90004D6BD /* HTTP.swift */,
+				E2A6188C257D29E60004D6BD /* Endpoint.swift */,
 			);
 			path = Network;
 			sourceTree = "<group>";
@@ -245,6 +251,14 @@
 				E20A3DF82577914D00D6257F /* DIContainer.swift */,
 			);
 			path = Containers;
+			sourceTree = "<group>";
+		};
+		E2A61876257D1D750004D6BD /* Errors */ = {
+			isa = PBXGroup;
+			children = (
+				E2A61877257D1D840004D6BD /* APIError.swift */,
+			);
+			path = Errors;
 			sourceTree = "<group>";
 		};
 		E2F056E12577D47400B019AB /* Agents */ = {
@@ -396,19 +410,21 @@
 				E20A3DF92577914D00D6257F /* DIContainer.swift in Sources */,
 				E2F0574625794ABE00B019AB /* QuotesRepository.swift in Sources */,
 				E2F05731257818D200B019AB /* APICall.swift in Sources */,
+				E2A61882257D29A90004D6BD /* HTTP.swift in Sources */,
 				E20A3DAA2577854300D6257F /* ContentView.swift in Sources */,
 				E20A3DEE25778E2300D6257F /* QuotesInteractor.swift in Sources */,
-				E2F057362578F2A500B019AB /* AppHeaders.swift in Sources */,
 				E20A3DE12577893C00D6257F /* ProcessInfo.swift in Sources */,
 				E20A3DF325778E5300D6257F /* Store.swift in Sources */,
 				E2F056A32577A9E000B019AB /* NetworkAgent.swift in Sources */,
 				E2732FF6257A468E0006C2CC /* Subjects.swift in Sources */,
 				E20A3E012577936A00D6257F /* AppEnvironment.swift in Sources */,
+				E2A6188D257D29E60004D6BD /* Endpoint.swift in Sources */,
 				E2F056E32577D48400B019AB /* QuotesAgent.swift in Sources */,
 				E20A3DA82577854300D6257F /* App.swift in Sources */,
 				E2F0573B2578F45B00B019AB /* Quote.swift in Sources */,
 				E20A3DE925778A7F00D6257F /* AppState.swift in Sources */,
 				E2F057412578F8B900B019AB /* Loadable.swift in Sources */,
+				E2A61878257D1D840004D6BD /* APIError.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

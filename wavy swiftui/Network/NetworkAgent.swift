@@ -16,9 +16,9 @@ protocol NetworkAgent {
 }
 
 extension NetworkAgent {
-    func call<T>(endpoint: APICall) -> AnyPublisher<T, Error> where T: Decodable {
+    func call<T>(endpoint: Endpoint) -> AnyPublisher<T, Error> where T: Decodable {
         do {
-            let request = try endpoint.buildRequest(for: baseURL)
+            let request = try endpoint.makeRequest(for: baseURL)
 
             return session
                 .dataTaskPublisher(for: request)
@@ -40,9 +40,9 @@ extension NetworkAgent {
         }
     }
 
-    func image(from url: String, endpoint: APICall) -> AnyPublisher<Image, Error> {
+    func image(from baseURL: String, endpoint: Endpoint) -> AnyPublisher<Image, Error> {
         do {
-            let request = try endpoint.buildRequest(for: url)
+            let request = try endpoint.makeRequest(for: baseURL)
 
             return session
                 .dataTaskPublisher(for: request)

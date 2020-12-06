@@ -20,36 +20,17 @@ struct QuotesAgent: PQuotesAgent {
     let bgQueue = DispatchQueue(label: "background-parsing-queue")
 
     func loadQuote() -> AnyPublisher<Quote, Error> {
-        call(endpoint: API.quote)
+        return call(endpoint: Endpoint(path: API.quote.rawValue))
     }
 
     func loadImage(from url: String) -> AnyPublisher<Image, Error> {
-        image(from: url, endpoint: API.image)
+        let endpoint = Endpoint()
+        return image(from: url, endpoint: endpoint)
     }
 }
 
 extension QuotesAgent {
-    enum API: APICall {
-        case quote
-        case image
-
-        var path: String {
-            switch self {
-            case .quote: return ""
-            case .image: return ""
-            }
-        }
-
-        var method: HTTPMethod {
-            .get
-        }
-
-        var headers: [String : String] {
-            [:]
-        }
-
-        func body() throws -> Data? {
-            nil
-        }
+    enum API: String {
+        case quote = "/"
     }
 }
