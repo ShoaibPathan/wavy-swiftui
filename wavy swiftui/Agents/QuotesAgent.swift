@@ -15,7 +15,7 @@ protocol PQuotesAgent: NetworkAgent {
 
 struct QuotesAgent: PQuotesAgent {
     let state: Store<AppState>
-    let baseURL: String
+    let host: String
     let session: URLSession
     let bgQueue = DispatchQueue(label: "background-parsing-queue")
 

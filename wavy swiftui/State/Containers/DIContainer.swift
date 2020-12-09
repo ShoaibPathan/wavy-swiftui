@@ -31,15 +31,20 @@ extension DIContainer {
     // MARK: - App interactors
     struct InteractorsContainer {
         let quotes: PQuotesInteractor
+        let wallpapers: PWallpapersInteractor
 
         static var stub: Self {
-            .init(quotes: StubQuotesInteractor())
+            .init(
+                quotes: StubQuotesInteractor(),
+                wallpapers: StubWallpapersInteractor()
+            )
         }
     }
 
     // MARK: - Remote data
     struct NetworkContainer {
         let quotesAgent: PQuotesAgent
+        let wallpapersAgent: PWallpapersAgent
     }
 
     // MARK: - Local persisted data

@@ -3,7 +3,7 @@
 	archiveVersion = 1;
 	classes = {
 	};
-	objectVersion = 50;
+	objectVersion = 52;
 	objects = {
 
 /* Begin PBXBuildFile section */
@@ -19,14 +19,18 @@
 		E20A3DF325778E5300D6257F /* Store.swift in Sources */ = {isa = PBXBuildFile; fileRef = E20A3DF225778E5300D6257F /* Store.swift */; };
 		E20A3DF92577914D00D6257F /* DIContainer.swift in Sources */ = {isa = PBXBuildFile; fileRef = E20A3DF82577914D00D6257F /* DIContainer.swift */; };
 		E20A3E012577936A00D6257F /* AppEnvironment.swift in Sources */ = {isa = PBXBuildFile; fileRef = E20A3E002577936A00D6257F /* AppEnvironment.swift */; };
+		E22D3B29258021D200F0719E /* URLImage in Frameworks */ = {isa = PBXBuildFile; productRef = E22D3B28258021D200F0719E /* URLImage */; };
 		E2732FF6257A468E0006C2CC /* Subjects.swift in Sources */ = {isa = PBXBuildFile; fileRef = E2732FF5257A468E0006C2CC /* Subjects.swift */; };
 		E2A61878257D1D840004D6BD /* APIError.swift in Sources */ = {isa = PBXBuildFile; fileRef = E2A61877257D1D840004D6BD /* APIError.swift */; };
 		E2A61882257D29A90004D6BD /* HTTP.swift in Sources */ = {isa = PBXBuildFile; fileRef = E2A61881257D29A90004D6BD /* HTTP.swift */; };
 		E2A6188D257D29E60004D6BD /* Endpoint.swift in Sources */ = {isa = PBXBuildFile; fileRef = E2A6188C257D29E60004D6BD /* Endpoint.swift */; };
+		E2A61892257D33040004D6BD /* Wallpaper.swift in Sources */ = {isa = PBXBuildFile; fileRef = E2A61891257D33040004D6BD /* Wallpaper.swift */; };
+		E2A61897257D33F60004D6BD /* WallpapersInteractor.swift in Sources */ = {isa = PBXBuildFile; fileRef = E2A61896257D33F60004D6BD /* WallpapersInteractor.swift */; };
+		E2A6189C257D34D10004D6BD /* WallpapersAgent.swift in Sources */ = {isa = PBXBuildFile; fileRef = E2A6189B257D34D10004D6BD /* WallpapersAgent.swift */; };
+		E2A618AB257D5DD30004D6BD /* KingfisherSwiftUI in Frameworks */ = {isa = PBXBuildFile; productRef = E2A618AA257D5DD30004D6BD /* KingfisherSwiftUI */; };
 		E2F0569E25779A0B00B019AB /* HomeView.swift in Sources */ = {isa = PBXBuildFile; fileRef = E2F0569D25779A0B00B019AB /* HomeView.swift */; };
 		E2F056A32577A9E000B019AB /* NetworkAgent.swift in Sources */ = {isa = PBXBuildFile; fileRef = E2F056A22577A9E000B019AB /* NetworkAgent.swift */; };
 		E2F056E32577D48400B019AB /* QuotesAgent.swift in Sources */ = {isa = PBXBuildFile; fileRef = E2F056E22577D48400B019AB /* QuotesAgent.swift */; };
-		E2F05731257818D200B019AB /* APICall.swift in Sources */ = {isa = PBXBuildFile; fileRef = E2F05730257818D200B019AB /* APICall.swift */; };
 		E2F0573B2578F45B00B019AB /* Quote.swift in Sources */ = {isa = PBXBuildFile; fileRef = E2F0573A2578F45B00B019AB /* Quote.swift */; };
 		E2F057412578F8B900B019AB /* Loadable.swift in Sources */ = {isa = PBXBuildFile; fileRef = E2F057402578F8B900B019AB /* Loadable.swift */; };
 		E2F0574625794ABE00B019AB /* QuotesRepository.swift in Sources */ = {isa = PBXBuildFile; fileRef = E2F0574525794ABE00B019AB /* QuotesRepository.swift */; };
@@ -72,10 +76,12 @@
 		E2A61877257D1D840004D6BD /* APIError.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = APIError.swift; sourceTree = "<group>"; };
 		E2A61881257D29A90004D6BD /* HTTP.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HTTP.swift; sourceTree = "<group>"; };
 		E2A6188C257D29E60004D6BD /* Endpoint.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Endpoint.swift; sourceTree = "<group>"; };
+		E2A61891257D33040004D6BD /* Wallpaper.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Wallpaper.swift; sourceTree = "<group>"; };
+		E2A61896257D33F60004D6BD /* WallpapersInteractor.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WallpapersInteractor.swift; sourceTree = "<group>"; };
+		E2A6189B257D34D10004D6BD /* WallpapersAgent.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WallpapersAgent.swift; sourceTree = "<group>"; };
 		E2F0569D25779A0B00B019AB /* HomeView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeView.swift; sourceTree = "<group>"; };
 		E2F056A22577A9E000B019AB /* NetworkAgent.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NetworkAgent.swift; sourceTree = "<group>"; };
 		E2F056E22577D48400B019AB /* QuotesAgent.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = QuotesAgent.swift; sourceTree = "<group>"; };
-		E2F05730257818D200B019AB /* APICall.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = APICall.swift; sourceTree = "<group>"; };
 		E2F0573A2578F45B00B019AB /* Quote.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Quote.swift; sourceTree = "<group>"; };
 		E2F057402578F8B900B019AB /* Loadable.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Loadable.swift; sourceTree = "<group>"; };
 		E2F0574525794ABE00B019AB /* QuotesRepository.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = QuotesRepository.swift; sourceTree = "<group>"; };
@@ -86,6 +92,8 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				E22D3B29258021D200F0719E /* URLImage in Frameworks */,
+				E2A618AB257D5DD30004D6BD /* KingfisherSwiftUI in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -129,12 +137,13 @@
 		E20A3DA62577854300D6257F /* wavy swiftui */ = {
 			isa = PBXGroup;
 			children = (
-				E2F0573F2578F8A400B019AB /* Utilities */,
 				E20A3DA72577854300D6257F /* App.swift */,
+				E2F0573F2578F8A400B019AB /* Utilities */,
 				E20A3DDC2577864300D6257F /* Extension */,
-				E20A3DD92577860400D6257F /* Interactors */,
 				E20A3DDB2577862400D6257F /* Models */,
 				E20A3DE725778A5400D6257F /* Network */,
+				E20A3DD92577860400D6257F /* Interactors */,
+				E2F056E12577D47400B019AB /* Agents */,
 				E20A3DE625778A3B00D6257F /* Repositories */,
 				E20A3DD8257785FF00D6257F /* State */,
 				E20A3DDA2577861D00D6257F /* UI */,
@@ -186,6 +195,7 @@
 			isa = PBXGroup;
 			children = (
 				E20A3DED25778E2300D6257F /* QuotesInteractor.swift */,
+				E2A61896257D33F60004D6BD /* WallpapersInteractor.swift */,
 			);
 			path = Interactors;
 			sourceTree = "<group>";
@@ -193,6 +203,7 @@
 		E20A3DDA2577861D00D6257F /* UI */ = {
 			isa = PBXGroup;
 			children = (
+				E2A618A0257D55080004D6BD /* Components */,
 				E20A3DE5257789A800D6257F /* Views */,
 			);
 			path = UI;
@@ -202,6 +213,7 @@
 			isa = PBXGroup;
 			children = (
 				E2F0573A2578F45B00B019AB /* Quote.swift */,
+				E2A61891257D33040004D6BD /* Wallpaper.swift */,
 			);
 			path = Models;
 			sourceTree = "<group>";
@@ -236,10 +248,7 @@
 			isa = PBXGroup;
 			children = (
 				E2A61876257D1D750004D6BD /* Errors */,
-				E2F056E12577D47400B019AB /* Agents */,
 				E2F056A22577A9E000B019AB /* NetworkAgent.swift */,
-				E2F05730257818D200B019AB /* APICall.swift */,
-				E2A61881257D29A90004D6BD /* HTTP.swift */,
 				E2A6188C257D29E60004D6BD /* Endpoint.swift */,
 			);
 			path = Network;
@@ -261,10 +270,18 @@
 			path = Errors;
 			sourceTree = "<group>";
 		};
+		E2A618A0257D55080004D6BD /* Components */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = Components;
+			sourceTree = "<group>";
+		};
 		E2F056E12577D47400B019AB /* Agents */ = {
 			isa = PBXGroup;
 			children = (
 				E2F056E22577D48400B019AB /* QuotesAgent.swift */,
+				E2A6189B257D34D10004D6BD /* WallpapersAgent.swift */,
 			);
 			path = Agents;
 			sourceTree = "<group>";
@@ -272,6 +289,7 @@
 		E2F0573F2578F8A400B019AB /* Utilities */ = {
 			isa = PBXGroup;
 			children = (
+				E2A61881257D29A90004D6BD /* HTTP.swift */,
 				E2F057402578F8B900B019AB /* Loadable.swift */,
 			);
 			path = Utilities;
@@ -293,6 +311,10 @@
 			dependencies = (
 			);
 			name = "wavy swiftui";
+			packageProductDependencies = (
+				E2A618AA257D5DD30004D6BD /* KingfisherSwiftUI */,
+				E22D3B28258021D200F0719E /* URLImage */,
+			);
 			productName = "wavy swiftui";
 			productReference = E20A3DA42577854300D6257F /* wavy swiftui.app */;
 			productType = "com.apple.product-type.application";
@@ -364,6 +386,10 @@
 				Base,
 			);
 			mainGroup = E20A3D9B2577854300D6257F;
+			packageReferences = (
+				E2A618A9257D5DD30004D6BD /* XCRemoteSwiftPackageReference "Kingfisher" */,
+				E22D3B27258021D200F0719E /* XCRemoteSwiftPackageReference "url-image" */,
+			);
 			productRefGroup = E20A3DA52577854300D6257F /* Products */;
 			projectDirPath = "";
 			projectRoot = "";
@@ -406,10 +432,11 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				E2A6189C257D34D10004D6BD /* WallpapersAgent.swift in Sources */,
 				E2F0569E25779A0B00B019AB /* HomeView.swift in Sources */,
 				E20A3DF92577914D00D6257F /* DIContainer.swift in Sources */,
 				E2F0574625794ABE00B019AB /* QuotesRepository.swift in Sources */,
-				E2F05731257818D200B019AB /* APICall.swift in Sources */,
+				E2A61897257D33F60004D6BD /* WallpapersInteractor.swift in Sources */,
 				E2A61882257D29A90004D6BD /* HTTP.swift in Sources */,
 				E20A3DAA2577854300D6257F /* ContentView.swift in Sources */,
 				E20A3DEE25778E2300D6257F /* QuotesInteractor.swift in Sources */,
@@ -424,6 +451,7 @@
 				E2F0573B2578F45B00B019AB /* Quote.swift in Sources */,
 				E20A3DE925778A7F00D6257F /* AppState.swift in Sources */,
 				E2F057412578F8B900B019AB /* Loadable.swift in Sources */,
+				E2A61892257D33040004D6BD /* Wallpaper.swift in Sources */,
 				E2A61878257D1D840004D6BD /* APIError.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -744,6 +772,38 @@
 			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
+
+/* Begin XCRemoteSwiftPackageReference section */
+		E22D3B27258021D200F0719E /* XCRemoteSwiftPackageReference "url-image" */ = {
+			isa = XCRemoteSwiftPackageReference;
+			repositoryURL = "https://github.com/dmytro-anokhin/url-image";
+			requirement = {
+				kind = upToNextMajorVersion;
+				minimumVersion = 2.1.12;
+			};
+		};
+		E2A618A9257D5DD30004D6BD /* XCRemoteSwiftPackageReference "Kingfisher" */ = {
+			isa = XCRemoteSwiftPackageReference;
+			repositoryURL = "https://github.com/onevcat/Kingfisher.git";
+			requirement = {
+				kind = upToNextMajorVersion;
+				minimumVersion = 5.15.8;
+			};
+		};
+/* End XCRemoteSwiftPackageReference section */
+
+/* Begin XCSwiftPackageProductDependency section */
+		E22D3B28258021D200F0719E /* URLImage */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = E22D3B27258021D200F0719E /* XCRemoteSwiftPackageReference "url-image" */;
+			productName = URLImage;
+		};
+		E2A618AA257D5DD30004D6BD /* KingfisherSwiftUI */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = E2A618A9257D5DD30004D6BD /* XCRemoteSwiftPackageReference "Kingfisher" */;
+			productName = KingfisherSwiftUI;
+		};
+/* End XCSwiftPackageProductDependency section */
 	};
 	rootObject = E20A3D9C2577854300D6257F /* Project object */;
 }

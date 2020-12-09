@@ -13,12 +13,12 @@ typealias LoadableSubject<T> = Binding<Loadable<T>>
 enum Loadable<T> {
     case notRequested
     case loading(last: T?, store: CancelBag)
-    case loaded(T)
+    case loaded(T, store: CancelBag?)
     case failed(Error)
 
     var value: T? {
         switch self {
-        case let .loaded(value): return value
+        case let .loaded(value, _): return value
         case let .loading(last, _): return last
         default: return nil
         }
@@ -36,7 +36,7 @@ enum Loadable<T> {
     }
 
     mutating func setLoaded(value: T) {
-        self = .loaded(value)
+        self = .loaded(value, store: nil)
     }
 
     mutating func setFailed(error: Error) {
@@ -47,7 +47,7 @@ enum Loadable<T> {
         if case let .loading(value, store) = self {
             store.cancel()
             if let lastValue = value {
-                self = .loaded(lastValue)
+                self = .loaded(lastValue, store: nil)
             } else {
                 self = .failed(ApiError.cancelledByUser)
             }

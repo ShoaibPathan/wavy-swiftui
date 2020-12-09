@@ -9,54 +9,47 @@ import Foundation
 
 struct Endpoint {
     var path: String = ""
-    var method: HTTPMethod = .get
-    var authentication: Authentication = .none
-    var query: [String: String] = [:]
-    var headers: [String: String] = [:]
-    var body: HTTPBody?
+    var configuration = Configuration()
 
-    func makeRequest(for baseURL: String) throws -> URLRequest {
-        guard let url = makeURL(base: baseURL) else {
+    func makeRequest(for host: String) throws -> URLRequest {
+        var components = URLComponents()
+        components.scheme = configuration.scheme
+        components.host = host
+        components.path = path
+        components.queryItems = configuration.query?.map { (k, v) in URLQueryItem(name: k, value: v) } ?? []
+
+        if case let .url(key, value) = configuration.authentication {
+            components.queryItems!.append(URLQueryItem(name: key, value: value))
+        }
+
+        guard let url = components.url?.absoluteURL else {
             throw ApiError.invalidURL
         }
 
         var request = URLRequest(url: url)
-        request.httpMethod = method.rawValue
-        request.allHTTPHeaderFields = headers
-        if case let .bearer(token) = authentication {
+        request.httpMethod = configuration.method.rawValue
+        request.httpBody = try configuration.body?()
+        request.allHTTPHeaderFields = configuration.headers
+        if case let .bearer(token) = configuration.authentication {
             request.addValue("Bearer \(token)", forHTTPHeaderField: "Authorization")
         }
-        request.httpBody = try body?()
 
         return request
     }
 
-    private func makeQueryString() -> String? {
-        if query.isEmpty {
-            return nil
+    func makeAssetRequest(for baseURL: String) throws -> URLRequest {
+        guard let url = URL(string: baseURL) else {
+            throw ApiError.invalidURL
         }
 
-        var params: [String] = []
-        for (key, value) in query {
-            guard let paramKey = key.addingPercentEncoding(withAllowedCharacters: .urlQueryAllowed),
-                  let paramValue = value.addingPercentEncoding(withAllowedCharacters: .urlQueryAllowed) else {
-                return nil
-            }
-            params.append("\(paramKey)=\(paramValue)")
-        }
-        return params.joined(separator: "&")
-    }
-
-    private func makeURL(base: String) -> URL? {
-        var url = base.appending(path)
-        if let params = makeQueryString() {
-            url.append("?\(params)")
-        }
-        if case let .url(key, value) = authentication {
-            url.append("&\(key)=\(value)")
+        var request = URLRequest(url: url)
+        request.httpMethod = configuration.method.rawValue
+        request.allHTTPHeaderFields = configuration.headers
+        if case let .bearer(token) = configuration.authentication {
+            request.addValue("Bearer \(token)", forHTTPHeaderField: "Authorization")
         }
 
-        return URL(string: url)
+        return request
     }
 }
 
@@ -65,5 +58,27 @@ extension Endpoint {
         case none
         case bearer(token: String)
         case url(key: String, value: String)
+    }
+}
+
+extension Endpoint {
+    struct Configuration {
+        var scheme: String = "https"
+
+        var method: HTTPMethod = .get
+        var authentication: Authentication = .none
+
+        var headers: [String: String] = [:]
+        var query: [String: String]?
+
+        var body: HTTPBody?
+    }
+}
+
+extension Endpoint.Configuration {
+    func set<T>(_ value: T, keyPath: WritableKeyPath<Self, T>) -> Self {
+        var res = self
+        res[keyPath: keyPath] = value
+        return res
     }
 }

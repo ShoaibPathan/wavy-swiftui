@@ -17,9 +17,8 @@ struct QuotesRepository: PQuotesRepository {
     let appState: Store<AppState>
 
     func hasQuotes() -> AnyPublisher<Quote?, Error> {
-        return Just<Quote?>(appState[\.data.quote])
-            .setFailureType(to: Error.self)
-            .eraseToAnyPublisher()
+        Just
+            .withErrorType(appState[\.data.quote], Error.self)
     }
 
     func setQuote(to quote: Quote) {

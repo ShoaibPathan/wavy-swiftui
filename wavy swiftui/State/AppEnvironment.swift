@@ -40,15 +40,14 @@ struct AppEnvironment {
         configuration.urlCache = .shared
         let session = URLSession(configuration: configuration)
 
-        let quotes = QuotesAgent(state: state, baseURL: "https://api.kanye.rest", session: session)
+        let quotes = QuotesAgent(state: state, host: "api.kanye.rest", session: session)
+        let wallpapers = WallpapersAgent(state: state, host: "wallhaven.cc", session: session)
 
-        return .init(quotesAgent: quotes)
+        return .init(quotesAgent: quotes, wallpapersAgent: wallpapers)
     }
 
     private static func makeRepositoriesContainer(state: Store<AppState>) -> DIContainer.RepositoriesContainer {
-        .init(
-            quotes: QuotesRepository(appState: state)
-        )
+        .init(quotes: QuotesRepository(appState: state))
     }
 
     private static func makeInteractorsContainer(
@@ -57,7 +56,8 @@ struct AppEnvironment {
         network: DIContainer.NetworkContainer
     ) -> DIContainer.InteractorsContainer {
         let quotes = QuotesInteractor(state: state, agent: network.quotesAgent, repository: repositories.quotes)
+        let walls = WallpapersInteractor(state: state, agent: network.wallpapersAgent)
 
-        return .init(quotes: quotes)
+        return .init(quotes: quotes, wallpapers: walls)
     }
 }

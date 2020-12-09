@@ -10,7 +10,7 @@ import SwiftUI
 import UIKit
 
 protocol NetworkAgent {
-    var baseURL: String { get }
+    var host: String { get }
     var session: URLSession { get }
     var bgQueue: DispatchQueue { get }
 }
@@ -18,7 +18,7 @@ protocol NetworkAgent {
 extension NetworkAgent {
     func call<T>(endpoint: Endpoint) -> AnyPublisher<T, Error> where T: Decodable {
         do {
-            let request = try endpoint.makeRequest(for: baseURL)
+            let request = try endpoint.makeRequest(for: host)
 
             return session
                 .dataTaskPublisher(for: request)
@@ -40,9 +40,9 @@ extension NetworkAgent {
         }
     }
 
-    func image(from baseURL: String, endpoint: Endpoint) -> AnyPublisher<Image, Error> {
+    func image(from url: String, endpoint: Endpoint) -> AnyPublisher<Image, Error> {
         do {
-            let request = try endpoint.makeRequest(for: baseURL)
+            let request = try endpoint.makeAssetRequest(for: url)
 
             return session
                 .dataTaskPublisher(for: request)
